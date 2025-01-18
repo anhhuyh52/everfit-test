@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+/* Flex container for the calendar */
+.flex {
+  display: flex;
+}
+
+/* Ensures each day's container fills the height of the parent */
+.day-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make each column fill the available height */
+  border-radius: 8px;
+}
+
+/* Ensures workout container takes up remaining height */
+.workout-container {
+  flex-grow: 1;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
